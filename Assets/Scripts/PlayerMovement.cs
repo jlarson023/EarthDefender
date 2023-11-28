@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private float verticalInput;
     private float horizontalInput;
     public float moveSpeed;
+    public float rotationSpeed;
 
 
     // Start is called before the first frame update
@@ -19,9 +20,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * verticalInput * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * verticalInput * moveSpeed * Time.deltaTime);
 
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.forward * horizontalInput * Time.deltaTime);
+        transform.Rotate(Vector3.up * horizontalInput * rotationSpeed * Time.deltaTime);
     }
 }
