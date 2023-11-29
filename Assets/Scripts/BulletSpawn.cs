@@ -17,9 +17,16 @@ public class BulletSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S)) 
+        //Controller shooting
+        if (Input.GetButtonDown("Shoot"))
         {
-            Instantiate(bulletPrefab, spawnPoint.transform.position, bulletPrefab.transform.rotation);
+            Debug.Log("You pressed shoot.");
+            Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        }
+        //Keyboard shooting
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
     }
 }

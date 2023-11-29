@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private float verticalInput;
     private float horizontalInput;
@@ -24,5 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up * horizontalInput * rotationSpeed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
