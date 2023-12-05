@@ -6,7 +6,8 @@ public class BulletSpawn : MonoBehaviour
 {
     public GameObject spawnPoint;
     public GameObject bulletPrefab;
-    
+
+    public GameManager gameManager;
     
     // Start is called before the first frame update
     void Start()

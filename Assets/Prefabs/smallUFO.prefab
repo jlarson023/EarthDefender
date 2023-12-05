@@ -667,6 +667,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 50
+  pointValue: 50
 --- !u!1 &4889922670156318598
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,9 @@ public class EnemyController : MonoBehaviour
     //private float yMin = -6.0f;
     //private float xMax = 13.0f;
     //private float yMax = 8.0f;
+    public int pointValue;
+
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +39,14 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            //the enemy will move in the direction of the random path assigned above
+        //the enemy will move in the direction of the random path assigned above
+        /* if (gameManager.isGameActive)
+        {
             Vector3 lookDirection = (enemyPaths[randomPath].transform.position - transform.position).normalized;
             enemyRb.AddForce(lookDirection * moveSpeed * Time.deltaTime);
+        }  */
+
+        Vector3 lookDirection = (enemyPaths[randomPath].transform.position - transform.position).normalized;
+        enemyRb.AddForce(lookDirection * moveSpeed * Time.deltaTime);
     }
 }

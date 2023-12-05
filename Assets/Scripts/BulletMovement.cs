@@ -17,7 +17,6 @@ public class BulletMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * moveSpeed *  Time.deltaTime);
-
     }
 
     private void OnCollisionEnter(Collision collision)
