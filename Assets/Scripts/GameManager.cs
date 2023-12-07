@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEditor.AssetImporters;
+//using UnityEditor.AssetImporters;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive = true;
-        score = 0;
-        lives = 3;
+        UpdateScore(0);
+        UpdateLives(3);
         startScreen.SetActive(false);
         changingText.SetActive(true);
     }
@@ -57,18 +57,26 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + score;
     }
 
-    /*public void UpdateLives(int totalLives)
+    public void UpdateLives(int totalLives)
     {
-        
- 
-    }*/
+        lives = 0;
+        lives += totalLives;
+        livesText.text = "Lives: " + lives;
+    }
 
     // Stop game, bring up game over text and restart button
     public void GameOver()
     {
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
+        gameOverScreen.SetActive(true);
         isGameActive = false;
     }
+
+    // Restart game by reloading the scene
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 
 }

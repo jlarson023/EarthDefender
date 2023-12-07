@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   rotationSpeed: 90
+  gameManager: {fileID: 0}
 --- !u!114 &4415797084644102855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 4415797083914367259}
   bulletPrefab: {fileID: 7577878985421188459, guid: 1131c8f41e48d2045abb39f2bd492ead, type: 3}
+  gameManager: {fileID: 0}
 --- !u!1 &4415797083914367259
 GameObject:
   m_ObjectHideFlags: 0

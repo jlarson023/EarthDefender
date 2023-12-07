@@ -25,6 +25,8 @@ public class EnemyController : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
 
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         //add each enemy path to the array
         for (int i = 0; i < enemyPaths.Length; i ++)
         {

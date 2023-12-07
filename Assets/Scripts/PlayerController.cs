@@ -11,28 +11,45 @@ public class PlayerController : MonoBehaviour
 
     public GameManager gameManager;
 
+    private int totalLives;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {    
             verticalInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.forward * verticalInput * moveSpeed * Time.deltaTime);
 
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Rotate(Vector3.up * horizontalInput * rotationSpeed * Time.deltaTime);
+
+            totalLives = gameManager.lives;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            if(totalLives == 0)
+            {
+                gameManager.GameOver();
+            }
+            else
+            {
+                //destroy player
+                Destroy(gameObject);
+                //lose a life
+                gameManager.UpdateLives(totalLives - 1);
+                //spawn new player
+
+            }
         }
     }
+
 }
