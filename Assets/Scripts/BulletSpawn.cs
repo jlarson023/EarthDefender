@@ -19,13 +19,13 @@ public class BulletSpawn : MonoBehaviour
     void Update()
     {
         //Controller shooting
-        if (Input.GetButtonDown("Shoot"))
+        if (Input.GetButtonDown("Shoot") && gameManager.isGameActive)
         {
             Debug.Log("You pressed shoot.");
             Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
         //Keyboard shooting
-        if (Input.GetKeyDown(KeyCode.E)) 
+        if (Input.GetKeyDown(KeyCode.E) && gameManager.isGameActive) 
         {
             Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
         }

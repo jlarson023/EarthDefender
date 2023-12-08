@@ -5,18 +5,23 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     public float moveSpeed;
-    
+
+    GameManager gameManager;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * moveSpeed *  Time.deltaTime);
+        if(gameManager.isGameActive)
+        {
+            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,4 +32,7 @@ public class BulletMovement : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    //coroutine for time between shots
+
 }

@@ -8,14 +8,17 @@ public class EnemyController : MonoBehaviour
     public Rigidbody enemyRb;
     //Array of different possible paths the enemy could take
     public GameObject[] enemyPaths;
+    //random path in array variable
     private int randomPath;
-    
-    public float moveSpeed;
-    //X and Y positions
+
+    //X and Y positions for spawn
     //private float xMin = -13.0f;
     //private float yMin = -6.0f;
     //private float xMax = 13.0f;
     //private float yMax = 8.0f;
+
+    //Other variables
+    public float moveSpeed;
     public int pointValue;
 
     public GameManager gameManager;
@@ -48,7 +51,11 @@ public class EnemyController : MonoBehaviour
             enemyRb.AddForce(lookDirection * moveSpeed * Time.deltaTime);
         }  */
 
-        Vector3 lookDirection = (enemyPaths[randomPath].transform.position - transform.position).normalized;
-        enemyRb.AddForce(lookDirection * moveSpeed * Time.deltaTime);
+        if(gameManager.isGameActive)
+        {
+            Vector3 lookDirection = (enemyPaths[randomPath].transform.position - transform.position).normalized;
+            enemyRb.AddForce(lookDirection * moveSpeed * Time.deltaTime);
+        }
+
     }
 }
