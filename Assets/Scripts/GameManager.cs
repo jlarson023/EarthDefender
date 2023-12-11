@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public GameObject startScreen;
     public GameObject changingText;
     public GameObject gameOverScreen;
+    //prefabs
+    public GameObject playerPrefab;
+    public GameObject playerSpawnPos;
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive = true;
+        PlayerSpawn();
         UpdateScore(0);
         UpdateLives(3);
         startScreen.SetActive(false);
@@ -77,6 +81,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-
+    public void PlayerSpawn()
+    {
+        Instantiate(playerPrefab, playerSpawnPos.transform.position, playerPrefab.transform.rotation);
+    }
 
 }

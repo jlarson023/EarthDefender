@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 3857963661457883131}
   - component: {fileID: 3603025934680538207}
   - component: {fileID: 1104665315743264119}
+  - component: {fileID: 8837798470709418757}
   m_Layer: 0
   m_Name: smallUFO
   m_TagString: Enemy
@@ -669,6 +670,22 @@ MonoBehaviour:
   moveSpeed: 50
   pointValue: 50
   gameManager: {fileID: 0}
+--- !u!114 &8837798470709418757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522156286560675137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06c59aff6fa9b649b1222d39517cd47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightBound: 11
+  leftBound: -11
+  topBound: 9
+  bottomBound: -6
 --- !u!1 &4889922670156318598
 GameObject:
   m_ObjectHideFlags: 0

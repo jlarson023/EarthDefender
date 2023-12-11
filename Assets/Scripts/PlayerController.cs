@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
                 //lose a life
                 gameManager.UpdateLives(totalLives - 1);
                 //spawn new player
-
+                gameManager.PlayerSpawn();
             }
         }
     }

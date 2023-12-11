@@ -6,12 +6,15 @@ public class BulletMovement : MonoBehaviour
 {
     public float moveSpeed;
 
-    GameManager gameManager;
+    public GameManager gameManager;
+
+    public EnemyController enemyController;
     
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        enemyController = GetComponent<EnemyController>();
     }
 
     // Update is called once per frame
@@ -19,7 +22,7 @@ public class BulletMovement : MonoBehaviour
     {
         if(gameManager.isGameActive)
         {
-            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+            StartCoroutine(BulletBehavior());
         }
         
     }
@@ -28,11 +31,20 @@ public class BulletMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            int points = enemyController.pointValue;
             Destroy(gameObject);
             Destroy(collision.gameObject);
+
+            gameManager.UpdateScore(points);
         }
     }
-
-    //coroutine for time between shots
+    //Bullet moves and then gets destroyed after a specific amount of time
+    IEnumerator BulletBehavior()
+    {
+        transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+        //Destroy after 4 seconds
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
+    }
 
 }

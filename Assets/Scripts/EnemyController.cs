@@ -45,11 +45,6 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         //the enemy will move in the direction of the random path assigned above
-        /* if (gameManager.isGameActive)
-        {
-            Vector3 lookDirection = (enemyPaths[randomPath].transform.position - transform.position).normalized;
-            enemyRb.AddForce(lookDirection * moveSpeed * Time.deltaTime);
-        }  */
 
         if(gameManager.isGameActive)
         {
