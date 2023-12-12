@@ -103,9 +103,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 88
   m_CollisionDetection: 0
 --- !u!64 &4415797084644102840
 MeshCollider:
@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 4415797083914367259}
   bulletPrefab: {fileID: 7577878985421188459, guid: 1131c8f41e48d2045abb39f2bd492ead, type: 3}
+  canShoot: 1
+  shootDelay: 1
   gameManager: {fileID: 0}
 --- !u!114 &1239317527556933214
 MonoBehaviour:

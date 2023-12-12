@@ -717,7 +717,10 @@ MonoBehaviour:
   changingText: {fileID: 1828945}
   gameOverScreen: {fileID: 1406030973}
   playerPrefab: {fileID: 3569518169064748857, guid: 8fdeb94324782314cbc374288aec5d47, type: 3}
+  enemyPrefab: {fileID: 0}
   playerSpawnPos: {fileID: 1630013511}
+  ufoCount: 0
+  level: 0
 --- !u!4 &700810804
 Transform:
   m_ObjectHideFlags: 0

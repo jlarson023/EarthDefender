@@ -648,7 +648,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 88
   m_CollisionDetection: 0
 --- !u!114 &1104665315743264119
 MonoBehaviour:
@@ -667,7 +667,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  moveSpeed: 50
+  moveSpeed: 0.5
   pointValue: 50
   gameManager: {fileID: 0}
 --- !u!114 &8837798470709418757

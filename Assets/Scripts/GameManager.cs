@@ -25,8 +25,19 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;
     //prefabs
     public GameObject playerPrefab;
+    public GameObject enemyPrefab;
+    //spawns
     public GameObject playerSpawnPos;
-    
+    //public GameObject enemySpawnPos;
+    //Wave variables
+    public int ufoCount;
+    public int level = 0;
+    //X and Y positions for spawn
+    private float xMin = -13.0f;
+    private float yMin = -6.0f;
+    private float xMax = 13.0f;
+    private float yMax = 8.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +47,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*ufoCount = FindObjectsOfType<EnemyController>().Length;
         
+        //if there are no ufos left spawn more
+        if(ufoCount == 0)
+        {
+            //increase level
+            level++;
+            int numAsteroids = 2 + (2 * level);
+            SpawnEnemyWave(numAsteroids);
+        }*/
     }
 
     public void StartGame()
@@ -48,11 +68,6 @@ public class GameManager : MonoBehaviour
         startScreen.SetActive(false);
         changingText.SetActive(true);
     }
-
-    /* IEnumerator SpawnEnemy()
-    {
-
-    }*/
 
     // Update score with value from enemy destroyed
     public void UpdateScore(int scoreToAdd)
@@ -86,4 +101,25 @@ public class GameManager : MonoBehaviour
         Instantiate(playerPrefab, playerSpawnPos.transform.position, playerPrefab.transform.rotation);
     }
 
+    public void SpawnEnemy()
+    {
+        Instantiate(enemyPrefab, GenerateEnemySpawn(), enemyPrefab.transform.rotation);
+    }
+
+    private Vector3 GenerateEnemySpawn()
+    {
+        float spawnPosY = Random.Range(yMin, yMax);
+        float spawnPosX = Random.Range(xMin, xMax);
+
+        Vector3 randomPos = new Vector3(spawnPosX, spawnPosY, 0);
+        return randomPos;
+    }
+
+    void SpawnEnemyWave(int numAsteroids)
+    {
+        for (int i = 0; i < numAsteroids; i++)
+        {
+            SpawnEnemy();
+        }
+    }
 }

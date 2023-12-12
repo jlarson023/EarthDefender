@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //public Rigidbody playerRb;
+    
     private float verticalInput;
     private float horizontalInput;
     public float moveSpeed;
@@ -13,16 +15,16 @@ public class PlayerController : MonoBehaviour
 
     private int totalLives;
 
-
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //playerRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
-    {    
+    {   
         if(gameManager.isGameActive)
         {
             verticalInput = Input.GetAxis("Vertical");

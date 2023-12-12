@@ -11,12 +11,6 @@ public class EnemyController : MonoBehaviour
     //random path in array variable
     private int randomPath;
 
-    //X and Y positions for spawn
-    //private float xMin = -13.0f;
-    //private float yMin = -6.0f;
-    //private float xMax = 13.0f;
-    //private float yMax = 8.0f;
-
     //Other variables
     public float moveSpeed;
     public int pointValue;
@@ -41,16 +35,20 @@ public class EnemyController : MonoBehaviour
         Debug.Log("Random path: " + randomPath);
     }
 
-    // Update is called once per frame
+    // FixedUpdate will update at a fixed rate compared to update which is called once per frame
+    void FixedUpdate()
+    {
+
+
+    }
+
     void Update()
     {
         //the enemy will move in the direction of the random path assigned above
-
-        if(gameManager.isGameActive)
+        if (gameManager.isGameActive)
         {
             Vector3 lookDirection = (enemyPaths[randomPath].transform.position - transform.position).normalized;
-            enemyRb.AddForce(lookDirection * moveSpeed * Time.deltaTime);
+            enemyRb.AddForce(lookDirection * moveSpeed, ForceMode.Impulse);
         }
-
     }
 }
