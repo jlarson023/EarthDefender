@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyPrefab;
     //spawns
     public GameObject playerSpawnPos;
-    //public GameObject enemySpawnPos;
+    public GameObject[] enemySpawns;
     //Wave variables
     public int ufoCount;
     public int level = 0;
@@ -41,7 +41,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        /*//add each enemyspawn to the array
+        for (int i = 0; i < enemySpawns.Length; i++)
+        {
+            enemySpawns[i] = GameObject.Find($"Spawner{i}");
+            Debug.Log("Each enemy path: " + enemySpawns[i]);
+        }*/
     }
 
     // Update is called once per frame
@@ -63,6 +68,7 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         PlayerSpawn();
+        SpawnEnemy();
         UpdateScore(0);
         UpdateLives(3);
         startScreen.SetActive(false);
@@ -103,17 +109,19 @@ public class GameManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, GenerateEnemySpawn(), enemyPrefab.transform.rotation);
+        //Instantiate(enemyPrefab, GenerateEnemySpawn(), enemyPrefab.transform.rotation);
+        GameObject spawnPoint = //Random.Range(0, enemySpawns.Length);
+        Instantiate(enemyPrefab, spawnPoint.transform.position, enemyPrefab.transform.rotation);
     }
 
-    private Vector3 GenerateEnemySpawn()
+    /*private Vector3 GenerateEnemySpawn()
     {
         float spawnPosY = Random.Range(yMin, yMax);
         float spawnPosX = Random.Range(xMin, xMax);
 
         Vector3 randomPos = new Vector3(spawnPosX, spawnPosY, 0);
         return randomPos;
-    }
+    }*/
 
     void SpawnEnemyWave(int numAsteroids)
     {

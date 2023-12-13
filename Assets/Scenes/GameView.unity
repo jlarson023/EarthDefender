@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 104083644}
   m_Layer: 0
-  m_Name: Spawner1
+  m_Name: Spawner0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
   changingText: {fileID: 1828945}
   gameOverScreen: {fileID: 1406030973}
   playerPrefab: {fileID: 3569518169064748857, guid: 8fdeb94324782314cbc374288aec5d47, type: 3}
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 4754177112141051652, guid: 259717349cda71046ad6e37fba0e8b83, type: 3}
   playerSpawnPos: {fileID: 1630013511}
   ufoCount: 0
   level: 0
@@ -1260,7 +1260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1175504819}
   m_Layer: 0
-  m_Name: Spawner4
+  m_Name: Spawner3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1471,7 +1471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243332854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.53, y: -6.04, z: 0}
+  m_LocalPosition: {x: -3.32, y: -6.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1794,7 +1794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1633483623}
   m_Layer: 0
-  m_Name: Spawner2
+  m_Name: Spawner1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2195,7 +2195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2021515427}
   m_Layer: 0
-  m_Name: Spawner3
+  m_Name: Spawner2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2240,7 +2240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083263762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.8, y: -5.54, z: -0.06504753}
+  m_LocalPosition: {x: 13.8, y: -3.32, z: -0.06504753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
