@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2380376255995132483}
   - component: {fileID: 8588999377974388905}
   - component: {fileID: 5565133250784210349}
+  - component: {fileID: 3784766061226004737}
   m_Layer: 0
   m_Name: Saucer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,11 +94,24 @@ MeshCollider:
   m_GameObject: {fileID: 937974518026709055}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7116198487031641612, guid: b5ff18fa9b3f6024d987ca129118aa57, type: 3}
+--- !u!65 &3784766061226004737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937974518026709055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.024706053, y: 0.024706045, z: 0.004776714}
+  m_Center: {x: 0.000000001862645, y: -0.000000001396984, z: 9.2606046e-17}
 --- !u!1 &952738833896963569
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +126,7 @@ GameObject:
   - component: {fileID: 5565133249703151407}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +224,7 @@ GameObject:
   - component: {fileID: 5565133251457524604}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,7 +322,7 @@ GameObject:
   - component: {fileID: 5565133250410918682}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,7 +420,7 @@ GameObject:
   - component: {fileID: 5565133249827584560}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -504,7 +518,7 @@ GameObject:
   - component: {fileID: 5565133250943987821}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -602,7 +616,7 @@ GameObject:
   - component: {fileID: 5565133249557951625}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -762,7 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRb: {fileID: 0}
-  moveSpeed: 10
+  moveSpeed: 2.5
   pointValue: 100
   gameManager: {fileID: 0}
 --- !u!114 &7198065210830606612
@@ -795,7 +809,7 @@ GameObject:
   - component: {fileID: 5565133250147112271}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,7 +907,7 @@ GameObject:
   - component: {fileID: 5565133249742379207}
   m_Layer: 0
   m_Name: Dome
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -991,7 +1005,7 @@ GameObject:
   - component: {fileID: 5565133249792782086}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1089,7 +1103,7 @@ GameObject:
   - component: {fileID: 5565133249820748687}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1187,7 +1201,7 @@ GameObject:
   - component: {fileID: 5565133250503519670}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1285,7 +1299,7 @@ GameObject:
   - component: {fileID: 5565133251319350152}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

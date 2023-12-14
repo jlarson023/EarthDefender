@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     public float moveSpeed;
     public float rotationSpeed;
+    //audio
+    public AudioClip booster;
+    private AudioSource playerAudio;
 
     public GameManager gameManager;
 
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerAudio = gameManager.GetComponent<AudioSource>();
         //playerRb = GetComponent<Rigidbody>();
     }
 
@@ -29,6 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             verticalInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.forward * verticalInput * moveSpeed * Time.deltaTime);
+            //playerAudio.PlayOneShot(booster, 0.6f);
 
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Rotate(Vector3.up * horizontalInput * rotationSpeed * Time.deltaTime);
@@ -57,4 +62,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            if (totalLives == 0)
+            {
+                gameManager.GameOver();
+            }
+            else
+            {
+                //destroy player
+                Destroy(gameObject);
+                //lose a life
+                gameManager.UpdateLives(totalLives - 1);
+                //spawn new player
+                gameManager.PlayerSpawn();
+            }
+        }
+    }*/
 }

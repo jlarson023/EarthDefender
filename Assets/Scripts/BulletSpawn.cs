@@ -8,6 +8,9 @@ public class BulletSpawn : MonoBehaviour
     public GameObject bulletPrefab;
     public bool canShoot = true;
     public float shootDelay = 0.5f;
+    //Audio
+    private AudioSource laserAudio;
+    public AudioClip laser;
 
     public GameManager gameManager;
     
@@ -15,6 +18,7 @@ public class BulletSpawn : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        laserAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,12 +29,14 @@ public class BulletSpawn : MonoBehaviour
         {
             Debug.Log("You pressed shoot.");
             StartCoroutine(Shoot());
+            laserAudio.PlayOneShot(laser, 0.6f);
             
         }
         //Keyboard shooting
         if (Input.GetKeyDown(KeyCode.E) && gameManager.isGameActive && canShoot) 
         {
             StartCoroutine(Shoot());
+            laserAudio.PlayOneShot(laser, 0.6f);
         }
     }
 

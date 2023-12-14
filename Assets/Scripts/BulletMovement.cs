@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
@@ -8,7 +9,7 @@ public class BulletMovement : MonoBehaviour
 
     public GameManager gameManager;
 
-    public EnemyController enemyController;
+    private EnemyController enemyController;
     
     // Start is called before the first frame update
     void Start()
@@ -31,13 +32,27 @@ public class BulletMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            int points = enemyController.pointValue;
+            //int points = enemyController.pointValue;
             Destroy(gameObject);
             Destroy(collision.gameObject);
 
-            gameManager.UpdateScore(points);
+            //gameManager.UpdateScore(points);
         }
     }
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            //int points = enemyController.pointValue;
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+
+            //gameManager.UpdateScore(points);
+        }
+    }*/
+
+
     //Bullet moves and then gets destroyed after a specific amount of time
     IEnumerator BulletBehavior()
     {

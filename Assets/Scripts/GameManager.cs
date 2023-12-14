@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 //using UnityEditor.AssetImporters;
 
 public class GameManager : MonoBehaviour
@@ -30,45 +31,49 @@ public class GameManager : MonoBehaviour
     public GameObject playerSpawnPos;
     public GameObject[] enemySpawns;
     //Wave variables
-    public int ufoCount;
+    public int ufoCount = 0;
     public int level = 0;
     //X and Y positions for spawn
-    private float xMin = -13.0f;
-    private float yMin = -6.0f;
-    private float xMax = 13.0f;
-    private float yMax = 8.0f;
+    //private float xMin = -13.0f;
+    //private float yMin = -6.0f;
+    //private float xMax = 13.0f;
+    //private float yMax = 8.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        /*//add each enemyspawn to the array
+        //add each enemyspawn to the array
         for (int i = 0; i < enemySpawns.Length; i++)
         {
             enemySpawns[i] = GameObject.Find($"Spawner{i}");
-            Debug.Log("Each enemy path: " + enemySpawns[i]);
-        }*/
+            //Debug.Log("Each enemy spawn: " + enemySpawns[i]);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*ufoCount = FindObjectsOfType<EnemyController>().Length;
-        
-        //if there are no ufos left spawn more
-        if(ufoCount == 0)
+        ufoCount = FindObjectsOfType<EnemyController>().Length;
+        if (isGameActive)
         {
-            //increase level
-            level++;
-            int numAsteroids = 2 + (2 * level);
-            SpawnEnemyWave(numAsteroids);
-        }*/
+            //if there are no ufos left spawn more
+            if (ufoCount == 0)
+            {
+                //increase level
+                level++;
+                //increase number of UFOs
+                int numUFOs = 1 + (1 * level);
+                SpawnEnemyWave(numUFOs);
+            }
+        }
     }
 
     public void StartGame()
     {
         isGameActive = true;
+
         PlayerSpawn();
-        SpawnEnemy();
+        //SpawnEnemyWave(2);
         UpdateScore(0);
         UpdateLives(3);
         startScreen.SetActive(false);
@@ -110,7 +115,8 @@ public class GameManager : MonoBehaviour
     public void SpawnEnemy()
     {
         //Instantiate(enemyPrefab, GenerateEnemySpawn(), enemyPrefab.transform.rotation);
-        GameObject spawnPoint = //Random.Range(0, enemySpawns.Length);
+        GameObject spawnPoint = enemySpawns[UnityEngine.Random.Range(0, enemySpawns.Length)];
+        //Debug.Log("SpawnPoint: " + spawnPoint.name);
         Instantiate(enemyPrefab, spawnPoint.transform.position, enemyPrefab.transform.rotation);
     }
 
@@ -123,9 +129,9 @@ public class GameManager : MonoBehaviour
         return randomPos;
     }*/
 
-    void SpawnEnemyWave(int numAsteroids)
+    void SpawnEnemyWave(int numUFOs)
     {
-        for (int i = 0; i < numAsteroids; i++)
+        for (int i = 0; i < numUFOs; i++)
         {
             SpawnEnemy();
         }

@@ -50,5 +50,15 @@ public class EnemyController : MonoBehaviour
             Vector3 lookDirection = (enemyPaths[randomPath].transform.position - transform.position).normalized;
             enemyRb.AddForce(lookDirection * moveSpeed, ForceMode.Impulse);
         }*/
+
+        
     }
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy")) 
+        { 
+            
+        }
+    }*/
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3603025933114593741}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ MeshCollider:
   m_GameObject: {fileID: 495340496856794759}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 3603025933934542835}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ MeshCollider:
   m_GameObject: {fileID: 574587026020729044}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 3603025934326561226}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,7 +289,7 @@ MeshCollider:
   m_GameObject: {fileID: 1109602423160557618}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 3603025934373305667}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,7 +387,7 @@ MeshCollider:
   m_GameObject: {fileID: 2216127550756630492}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 3603025934691994242}
   m_Layer: 0
   m_Name: Dome
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 3603025934022723338}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,7 +583,7 @@ MeshCollider:
   m_GameObject: {fileID: 4421261934167891838}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRb: {fileID: 0}
-  moveSpeed: 10
+  moveSpeed: 5
   pointValue: 50
   gameManager: {fileID: 0}
 --- !u!114 &8837798470709418757
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 3603025934608230092}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,7 +775,7 @@ MeshCollider:
   m_GameObject: {fileID: 4889922670156318598}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 3603025933208986152}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -873,7 +873,7 @@ MeshCollider:
   m_GameObject: {fileID: 5364763883800326690}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -892,7 +892,7 @@ GameObject:
   - component: {fileID: 3603025934342039669}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -971,7 +971,7 @@ MeshCollider:
   m_GameObject: {fileID: 6923115969036246383}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 3603025933742580063}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1069,7 +1069,7 @@ MeshCollider:
   m_GameObject: {fileID: 7016759892755381350}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 3603025932708557113}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1167,7 +1167,7 @@ MeshCollider:
   m_GameObject: {fileID: 7299034919512909017}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 3603025934712542570}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
