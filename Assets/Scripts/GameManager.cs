@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
     }
-
+    //Update player lives
     public void UpdateLives(int totalLives)
     {
         lives = 0;

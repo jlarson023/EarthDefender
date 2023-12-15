@@ -7,6 +7,8 @@ public class BulletMovement : MonoBehaviour
 {
     public float moveSpeed;
 
+    public GameObject smallUFO;
+
     public GameManager gameManager;
 
     private EnemyController enemyController;
@@ -30,27 +32,50 @@ public class BulletMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        /*if (collision.gameObject.CompareTag("Enemy"))
+        {
+            //int points = enemyController.pointValue;
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            Instantiate(smallUFO, collision.gameObject.transform.position, smallUFO.transform.rotation);
+            //Instantiate(smallUFO, collision.gameObject.transform.position, smallUFO.transform.rotation);
+            //gameManager.UpdateScore(points);
+        }
+        if (collision.gameObject.CompareTag("Enemy2"))
         {
             //int points = enemyController.pointValue;
             Destroy(gameObject);
             Destroy(collision.gameObject);
 
             //gameManager.UpdateScore(points);
-        }
+        }*/
     }
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             //int points = enemyController.pointValue;
+            gameManager.UpdateScore(50);
             Destroy(gameObject);
-            Destroy(other.gameObject);
+            Destroy(other.gameObject.transform.parent.gameObject);
+            Instantiate(smallUFO, other.gameObject.transform.position, smallUFO.transform.rotation);
+            Instantiate(smallUFO, other.gameObject.transform.position, smallUFO.transform.rotation);
 
             //gameManager.UpdateScore(points);
+        } else if (other.gameObject.CompareTag("Enemy2"))
+        {
+            //int points = enemyController.pointValue;
+            gameManager.UpdateScore(100);
+            Destroy(gameObject);
+            Destroy(other.gameObject.transform.parent.gameObject);
+            //gameManager.UpdateScore(points);
         }
-    }*/
+    }
 
 
     //Bullet moves and then gets destroyed after a specific amount of time

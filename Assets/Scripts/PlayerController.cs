@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     //audio
     public AudioClip booster;
     private AudioSource playerAudio;
+    //Particle system
+    public ParticleSystem boosterParticle;
 
     public GameManager gameManager;
 
@@ -28,23 +30,49 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        if(gameManager.isGameActive)
+    {
+        if (gameManager.isGameActive)
         {
             verticalInput = Input.GetAxis("Vertical");
             transform.Translate(Vector3.forward * verticalInput * moveSpeed * Time.deltaTime);
-            //playerAudio.PlayOneShot(booster, 0.6f);
 
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Rotate(Vector3.up * horizontalInput * rotationSpeed * Time.deltaTime);
         }
 
+        /*if (verticalInput > 0)
+        {
+            playerAudio.PlayOneShot(booster, 0.6f);
+            boosterParticle.Play();
+        }*/
+
             totalLives = gameManager.lives;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy2"))
+        {
+            if(totalLives == 0)
+            {
+                gameManager.GameOver();
+            }
+            else
+            {
+                //destroy player
+                Destroy(gameObject);
+                //lose a life
+                gameManager.UpdateLives(totalLives - 1);
+                //spawn new player
+                gameManager.PlayerSpawn();
+            }
+        }
+    }*/
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
             if(totalLives == 0)
             {
@@ -61,25 +89,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Enemy"))
-        {
-            if (totalLives == 0)
-            {
-                gameManager.GameOver();
-            }
-            else
-            {
-                //destroy player
-                Destroy(gameObject);
-                //lose a life
-                gameManager.UpdateLives(totalLives - 1);
-                //spawn new player
-                gameManager.PlayerSpawn();
-            }
-        }
-    }*/
 }
